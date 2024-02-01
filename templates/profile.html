@@ -9,16 +9,29 @@
     <div>
         <h1>Password Manager</h1>
         <form>
-            <label for="username">username/email</label>
-            <input type="text" id="username">
-            <label for="url">url</label>
-            <input type="text" id="url">
-            <label for="password">password</label>
-            <input type="password">
-            <button type="submit">Add password</button>
+            <label for="url">url</label><br>
+            <input type="text" id="url"><br>
+            <label for="username">username/email</label><br>
+            <input type="text" id="username"><br>
+            <label for="password">password</label><br>
+            <input type="password"><br>
+            <button type="submit">Add password</button><br><br>
         </form>
         <div>
-            <table></table>
+            <table>
+                <tr>
+                    <th>url</th>
+                    <th>username</th>
+                    <th>password</th>
+                </tr>
+                {% for item in items %}
+                <tr>
+                    {% for i in item %}
+                    <td>{{ i }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
         </div>
     </div>
 </body>
